@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>BhumiOS Agro - Smart Farming, IoT &amp; Manajemen Agroindustri</title>
+    <meta name="description" content="BhumiOS Agro memadukan sensor IoT tanah & cuaca, peta blok lahan, otomasi irigasi, dan manajemen biaya panen dalam satu dashboard.">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="assets/style.css">
+    <style>
+        section[id] { scroll-margin-top: 5rem; }
+    </style>
+</head>
+<body class="antialiased text-white" id="top">
+    <!-- ===== Header ===== -->
+    <header class="bg-[#0b1f14]/95 backdrop-blur-md border-b border-white/10 sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <a href="#top" class="text-2xl font-bold text-green-500">BhumiOS Agro</a>
+                <nav class="hidden md:flex items-center space-x-1 text-sm font-medium">
+                    <a href="#top" class="text-gray-300 hover:text-white px-4 py-2 rounded-lg hover:bg-white/5 transition-all">Beranda</a>
+                    <a href="#features" class="text-gray-300 hover:text-white px-4 py-2 rounded-lg hover:bg-white/5 transition-all">Solusi</a>
+                    <a href="#modules" class="text-gray-300 hover:text-white px-4 py-2 rounded-lg hover:bg-white/5 transition-all">Modul</a>
+                    <a href="#benefits" class="text-gray-300 hover:text-white px-4 py-2 rounded-lg hover:bg-white/5 transition-all">Alur Kerja</a>
+                    <a href="#apps" class="text-gray-300 hover:text-white px-4 py-2 rounded-lg hover:bg-white/5 transition-all">Aplikasi</a>
+                    <a href="#community" class="text-gray-300 hover:text-white px-4 py-2 rounded-lg hover:bg-white/5 transition-all">Komunitas</a>
+                    <a href="#contact" class="text-gray-300 hover:text-white px-4 py-2 rounded-lg hover:bg-white/5 transition-all">Kontak</a>
+                </nav>
+                <div class="hidden md:flex items-center space-x-2">
+                    <a href="login.html" class="border border-green-600 text-green-500 hover:bg-green-600 hover:text-white px-4 py-2 text-sm rounded-md font-medium transition-colors">Masuk</a>
+                    <a href="register.html" class="bg-green-600 hover:bg-green-700 text-white px-4 py-2 text-sm rounded-md font-medium transition-colors">Lihat Demo Live</a>
+                </div>
+                <button id="menu-btn" class="md:hidden text-gray-300 p-2" aria-label="Menu">
+                    <i data-lucide="menu" class="h-6 w-6"></i>
+                </button>
+            </div>
+        </div>
+        <div id="mobile-menu" class="hidden md:hidden bg-[#0b1f14] border-t border-white/10">
+            <div class="px-2 pt-2 pb-3 space-y-1">
+                <a href="#top" class="block px-4 py-3 text-base font-medium text-gray-300 hover:bg-white/5 rounded-lg">Beranda</a>
+                <a href="#features" class="block px-4 py-3 text-base font-medium text-gray-300 hover:bg-white/5 rounded-lg">Solusi</a>
+                <a href="#modules" class="block px-4 py-3 text-base font-medium text-gray-300 hover:bg-white/5 rounded-lg">Modul</a>
+                <a href="#benefits" class="block px-4 py-3 text-base font-medium text-gray-300 hover:bg-white/5 rounded-lg">Alur Kerja</a>
+                <a href="#apps" class="block px-4 py-3 text-base font-medium text-gray-300 hover:bg-white/5 rounded-lg">Aplikasi</a>
+                <a href="#community" class="block px-4 py-3 text-base font-medium text-gray-300 hover:bg-white/5 rounded-lg">Komunitas</a>
+                <a href="#contact" class="block px-4 py-3 text-base font-medium text-gray-300 hover:bg-white/5 rounded-lg">Kontak</a>
+                <div class="px-3 py-2 flex flex-col space-y-2">
+                    <a href="login.html" class="text-center border border-green-600 text-green-500 px-4 py-2 text-sm rounded-md font-medium">Masuk</a>
+                    <a href="register.html" class="text-center bg-green-600 text-white px-4 py-2 text-sm rounded-md font-medium">Lihat Demo Live</a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- ===== Hero ===== -->
+    <section class="relative py-32 md:py-40 overflow-hidden" style="background-color:#0b1f14">
+        <div class="absolute inset-0">
+            <img src="https://images.unsplash.com/photo-1625246333195-78d9c38ad449?auto=format&fit=crop&w=1600&q=80" alt="Lahan pertanian" class="w-full h-full object-cover">
+            <div class="absolute inset-0 bg-gradient-to-br from-black/70 via-black/50 to-black/70"></div>
+        </div>
+        <div class="absolute inset-0 pointer-events-none overflow-hidden" data-particles="24"></div>
+        <div class="relative max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-white z-10 reveal">
+            <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full text-sm font-semibold mb-6 bg-white/10 border border-white/20 backdrop-blur-sm">
+                <span class="live-dot"></span>
+                1.240+ Sensor Online
+            </div>
+            <h1 class="text-4xl md:text-6xl font-bold mb-8 leading-tight drop-shadow-2xl">Teknologi untuk Lahan.<br>Inovasi untuk <span class="text-green-500">Masa Depan</span></h1>
+            <p class="text-xl md:text-2xl mb-8 max-w-4xl mx-auto opacity-95 leading-relaxed">BhumiOS Agro memadukan sensor IoT tanah &amp; cuaca, peta blok lahan, otomasi irigasi, dan manajemen biaya panen dalam satu dashboard. Pantau dari HP, kendalikan dari mana saja.</p>
+            <p class="telemetry text-sm mb-8 px-4 py-2 rounded-lg bg-black/30 text-green-200 border border-white/10">pH 6,4 &bull; Kelembaban 72% &bull; Suhu 29&deg;C &bull; Curah hujan 0 mm</p>
+            <div class="flex flex-col sm:flex-row gap-6 justify-center items-center">
+                <a href="register.html" class="bg-green-600 hover:bg-green-700 text-white px-10 py-4 rounded-2xl text-lg font-semibold inline-flex items-center shadow-2xl transition-all hover:-translate-y-1">Lihat Demo Live <i data-lucide="arrow-right" class="ml-3 h-6 w-6"></i></a>
+                <a href="https://wa.me/6289517605857?text=Halo%20BhumiOS%20Agro,%20saya%20tertarik%20dengan%20smart%20farming" target="_blank" rel="noopener" class="border-2 border-white/30 text-white px-10 py-4 rounded-2xl text-lg font-semibold hover:bg-white/10 transition-all backdrop-blur-sm">Chat WhatsApp</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== Stats ===== -->
+    <section class="py-16" style="background:linear-gradient(135deg,#16a34a,#15803d,#ca8a04)">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 reveal">
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
+                <div><div class="text-4xl md:text-5xl font-bold text-white mb-2">12.500+</div><div class="text-green-50 text-sm md:text-base">Hektar Lahan Terpantau</div></div>
+                <div><div class="text-4xl md:text-5xl font-bold text-white mb-2">1.240+</div><div class="text-green-50 text-sm md:text-base">Sensor IoT Aktif</div></div>
+                <div><div class="text-4xl md:text-5xl font-bold text-white mb-2">30%</div><div class="text-green-50 text-sm md:text-base">Hemat Air &amp; Pupuk</div></div>
+                <div><div class="text-4xl md:text-5xl font-bold text-white mb-2">94%</div><div class="text-green-50 text-sm md:text-base">Akurasi Prediksi Panen</div></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== Solusi / Features ===== -->
+    <section id="features" class="relative py-20 overflow-hidden border-t border-green-950" style="background-color:#1c3b2a">
+        <div class="grid-overlay"></div>
+        <div class="glow top-0 right-0 w-[28rem] h-[28rem] opacity-15" style="background-color:#16a34a"></div>
+        <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 reveal">
+            <h2 class="text-3xl md:text-4xl font-bold text-white mb-6 text-center">Solusi Pertanian Modern</h2>
+            <p class="text-lg text-green-100/70 mb-16 text-center max-w-3xl mx-auto">Dari sensor di tanah hingga laporan panen &mdash; ekosistem lengkap untuk agroindustri cerdas</p>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <div class="glass-card text-center p-6 rounded-2xl"><div class="w-16 h-16 mx-auto mb-4 rounded-2xl flex items-center justify-center" style="background-color:rgba(22,163,74,.19)"><i data-lucide="sprout" class="h-8 w-8 text-green-500"></i></div><h3 class="text-xl font-semibold text-white mb-3">Sensor Tanah &amp; Cuaca</h3><p class="text-green-100/70">Kelembaban, pH, TDS, suhu, dan curah hujan terpantau 24/7 dengan ambang peringatan otomatis.</p></div>
+                <div class="glass-card text-center p-6 rounded-2xl"><div class="w-16 h-16 mx-auto mb-4 rounded-2xl flex items-center justify-center" style="background-color:rgba(22,163,74,.19)"><i data-lucide="droplets" class="h-8 w-8 text-green-500"></i></div><h3 class="text-xl font-semibold text-white mb-3">Irigasi Otomatis Jarak Jauh</h3><p class="text-green-100/70">Nyalakan pompa dan keran irigasi dari HP. Bisa terjadwal atau terpicu data sensor.</p></div>
+                <div class="glass-card text-center p-6 rounded-2xl"><div class="w-16 h-16 mx-auto mb-4 rounded-2xl flex items-center justify-center" style="background-color:rgba(22,163,74,.19)"><i data-lucide="map-pin" class="h-8 w-8 text-green-500"></i></div><h3 class="text-xl font-semibold text-white mb-3">Peta Blok &amp; Aset Lahan</h3><p class="text-green-100/70">Petakan blok lahan, titik sensor, pompa, dan tandon dalam satu Farm Command Center.</p></div>
+                <div class="glass-card text-center p-6 rounded-2xl"><div class="w-16 h-16 mx-auto mb-4 rounded-2xl flex items-center justify-center" style="background-color:rgba(22,163,74,.19)"><i data-lucide="clipboard-list" class="h-8 w-8 text-green-500"></i></div><h3 class="text-xl font-semibold text-white mb-3">Tugas Tanam hingga Panen</h3><p class="text-green-100/70">Rencana tanam, perawatan, dan panen divisualkan di Kanban &amp; Gantt untuk tim lapangan.</p></div>
+                <div class="glass-card text-center p-6 rounded-2xl"><div class="w-16 h-16 mx-auto mb-4 rounded-2xl flex items-center justify-center" style="background-color:rgba(22,163,74,.19)"><i data-lucide="calculator" class="h-8 w-8 text-green-500"></i></div><h3 class="text-xl font-semibold text-white mb-3">Biaya &amp; Hasil per Blok</h3><p class="text-green-100/70">Catat pupuk, bibit, dan tenaga kerja per petak. Tahu persis margin tiap blok panen.</p></div>
+                <div class="glass-card text-center p-6 rounded-2xl"><div class="w-16 h-16 mx-auto mb-4 rounded-2xl flex items-center justify-center" style="background-color:rgba(22,163,74,.19)"><i data-lucide="bell" class="h-8 w-8 text-green-500"></i></div><h3 class="text-xl font-semibold text-white mb-3">Peringatan Dini &amp; Forecasting</h3><p class="text-green-100/70">Notifikasi WhatsApp saat kondisi kritis plus prediksi hasil berbasis data historis.</p></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== Modul Dashboard Web / Modules tabs ===== -->
+    <section id="modules" class="relative py-20 overflow-hidden border-y border-green-950" style="background-color:#152e20">
+        <div class="grid-overlay"></div>
+        <div class="glow -top-32 left-1/2 -translate-x-1/2 w-[36rem] h-[36rem] opacity-20" style="background-color:#16a34a"></div>
+        <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 reveal">
+            <h2 class="text-3xl md:text-4xl font-bold text-white mb-6 text-center">Modul Dashboard Web</h2>
+            <p class="text-lg text-green-100/70 mb-16 text-center max-w-3xl mx-auto">Empat modul inti yang berjalan di dashboard web: monitoring sensor, peta lahan, operasional lahan, dan keuangan tani &mdash; satu login untuk semuanya.</p>
+            <div data-autotabs data-interval="6000" data-active-bg="#16a34a">
+                <div class="flex flex-wrap justify-center mb-12 border-b border-white/10">
+                    <button data-tab-btn class="px-6 py-3 font-medium text-sm border-b-2 border-transparent text-green-100/60 hover:text-white transition-colors">Monitoring IoT Sensor</button>
+                    <button data-tab-btn class="px-6 py-3 font-medium text-sm border-b-2 border-transparent text-green-100/60 hover:text-white transition-colors">SiteManager Lahan</button>
+                    <button data-tab-btn class="px-6 py-3 font-medium text-sm border-b-2 border-transparent text-green-100/60 hover:text-white transition-colors">Taskly Operasional</button>
+                    <button data-tab-btn class="px-6 py-3 font-medium text-sm border-b-2 border-transparent text-green-100/60 hover:text-white transition-colors">Accounting Agro</button>
+                </div>
+                <div data-tab-panel class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                    <div><h3 class="text-2xl font-bold text-white mb-4">Sensor Tanah, Cuaca &amp; Air Real-Time</h3><p class="text-green-100/70 text-lg">Pantau kelembaban tanah, pH, TDS, suhu, dan curah hujan 24/7 dari dashboard web. Atur ambang batas dan terima peringatan dini via WhatsApp saat kondisi kritis.</p></div>
+                    <div class="rounded-lg h-80 overflow-hidden bg-white/5 border border-white/10 shadow-2xl"><img src="https://images.unsplash.com/photo-1586771107445-d3ca888129ff?auto=format&fit=crop&w=1000&q=80" alt="Monitoring IoT" class="w-full h-full object-cover"></div>
+                </div>
+                <div data-tab-panel class="hidden grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                    <div><h3 class="text-2xl font-bold text-white mb-4">Peta Blok, Aset &amp; Irigasi Lahan</h3><p class="text-green-100/70 text-lg">Petakan blok lahan, titik sensor, pompa, tandon, dan jalur irigasi di dashboard web. Kelola aset agroindustri per site dan kendalikan irigasi dari jarak jauh.</p></div>
+                    <div class="rounded-lg h-80 overflow-hidden bg-white/5 border border-white/10 shadow-2xl"><img src="https://images.unsplash.com/photo-1500382017468-9049fed747ef?auto=format&fit=crop&w=1000&q=80" alt="SiteManager" class="w-full h-full object-cover"></div>
+                </div>
+                <div data-tab-panel class="hidden grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                    <div><h3 class="text-2xl font-bold text-white mb-4">Tugas Tanam, Rawat &amp; Panen</h3><p class="text-green-100/70 text-lg">Susun rencana tanam hingga panen di Kanban &amp; Gantt pada dashboard web. Tugaskan tim lapangan dan pantau progres harian dengan foto.</p></div>
+                    <div class="rounded-lg h-80 overflow-hidden bg-white/5 border border-white/10 shadow-2xl"><img src="https://images.unsplash.com/photo-1523741543316-beb7fc7023d8?auto=format&fit=crop&w=1000&q=80" alt="Taskly" class="w-full h-full object-cover"></div>
+                </div>
+                <div data-tab-panel class="hidden grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                    <div><h3 class="text-2xl font-bold text-white mb-4">Biaya Produksi &amp; Hasil per Blok</h3><p class="text-green-100/70 text-lg">Catat biaya pupuk, bibit, tenaga kerja, dan BBM per blok lahan langsung di dashboard web. Bandingkan dengan hasil panen untuk tahu margin tiap petak.</p></div>
+                    <div class="rounded-lg h-80 overflow-hidden bg-white/5 border border-white/10 shadow-2xl"><img src="https://images.unsplash.com/photo-1560493676-04071c5f467b?auto=format&fit=crop&w=1000&q=80" alt="Accounting" class="w-full h-full object-cover"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== Aplikasi ===== -->
+    <section id="apps" class="relative py-20 sm:py-24 overflow-hidden border-y border-green-950" style="background-color:#122a1e">
+        <div class="grid-overlay"></div>
+        <div class="glow top-10 left-1/3 w-[30rem] h-[30rem] opacity-15" style="background-color:#ca8a04"></div>
+        <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16 sm:mb-20 reveal">
+                <span class="inline-block px-4 py-1.5 rounded-full text-xs font-semibold tracking-widest uppercase mb-4 border text-yellow-600 border-yellow-600/30" style="background-color:rgba(202,138,4,.06)">Aplikasi Unggulan</span>
+                <h2 class="text-3xl md:text-4xl font-bold text-white mb-4">Dua Aplikasi, Satu Lahan Cerdas</h2>
+                <p class="text-lg text-green-100/70 max-w-3xl mx-auto">Ditonton dari dashboard, dikendalikan dari saku. Dua aplikasi pendamping yang paling sering dibuka petani setiap hari.</p>
+            </div>
+            <div class="space-y-20 sm:space-y-28">
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center reveal">
+                    <div>
+                        <span class="inline-block px-3 py-1 rounded-full text-xs font-bold tracking-wider uppercase mb-4 text-green-500" style="background-color:rgba(22,163,74,.13)">Aplikasi Mobile</span>
+                        <h3 class="text-2xl md:text-3xl font-bold text-white mb-2">BhumiOS Mobile Monitoring</h3>
+                        <p class="text-lg font-medium mb-4 text-yellow-600">Seluruh lahan dalam genggaman</p>
+                        <p class="text-green-100/70 text-lg leading-relaxed mb-6">Aplikasi Android &amp; iOS untuk mandor dan petani. Grafik sensor real-time, notifikasi peringatan dini, dan foto progres tugas &mdash; tetap bisa dipakai offline di lahan tanpa sinyal.</p>
+                        <ul class="space-y-3 mb-8">
+                            <li class="flex items-start gap-3 text-green-50"><i data-lucide="check-circle-2" class="h-5 w-5 mt-0.5 shrink-0 text-green-500"></i><span>Grafik sensor real-time 24/7</span></li>
+                            <li class="flex items-start gap-3 text-green-50"><i data-lucide="check-circle-2" class="h-5 w-5 mt-0.5 shrink-0 text-green-500"></i><span>Notifikasi WhatsApp saat kritis</span></li>
+                            <li class="flex items-start gap-3 text-green-50"><i data-lucide="check-circle-2" class="h-5 w-5 mt-0.5 shrink-0 text-green-500"></i><span>Mode offline untuk lahan tanpa sinyal</span></li>
+                            <li class="flex items-start gap-3 text-green-50"><i data-lucide="check-circle-2" class="h-5 w-5 mt-0.5 shrink-0 text-green-500"></i><span>Foto progres &amp; absensi tim lapangan</span></li>
+                        </ul>
+                        <div class="flex flex-col sm:flex-row gap-3">
+                            <a href="register.html" class="inline-flex items-center justify-center text-white px-6 py-3 rounded-xl font-semibold bg-green-600 hover:bg-green-700 transition-all hover:scale-105 shadow-lg">Unduh Aplikasinya <i data-lucide="arrow-right" class="ml-2 h-5 w-5"></i></a>
+                            <a href="#features" class="inline-flex items-center justify-center px-6 py-3 rounded-xl font-semibold border-2 border-white/20 text-white hover:bg-white/10 transition-all">Lihat Fitur</a>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="relative mx-auto w-fit">
+                            <div class="absolute -inset-8 rounded-full blur-3xl opacity-25" style="background-color:#16a34a"></div>
+                            <div class="phone"><div class="phone-screen"><img src="https://images.unsplash.com/photo-1416879595882-3373a0480b5b?auto=format&fit=crop&w=800&q=80" alt="BhumiOS Mobile Monitoring"></div></div>
+                            <div class="chip-float -left-10 sm:-left-16 top-16">Kelembaban 72%</div>
+                            <div class="chip-float -right-8 sm:-right-14 bottom-20">Irigasi ON</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center reveal">
+                    <div class="lg:order-2">
+                        <span class="inline-block px-3 py-1 rounded-full text-xs font-bold tracking-wider uppercase mb-4 text-green-500" style="background-color:rgba(22,163,74,.13)">Deteksi AI</span>
+                        <h3 class="text-2xl md:text-3xl font-bold text-white mb-2">Deteksi Dini Penyakit</h3>
+                        <p class="text-lg font-medium mb-4 text-yellow-600">Jepret daun, tahu penyakitnya</p>
+                        <p class="text-green-100/70 text-lg leading-relaxed mb-6">Jepret foto daun dengan HP, AI menganalisis gejala hama dan penyakit beserta rekomendasi penanganan dan dosis. Riwayat deteksi tercatat per blok untuk evaluasi musim tanam.</p>
+                        <ul class="space-y-3 mb-8">
+                            <li class="flex items-start gap-3 text-green-50"><i data-lucide="check-circle-2" class="h-5 w-5 mt-0.5 shrink-0 text-green-500"></i><span>Diagnosis AI dari foto daun</span></li>
+                            <li class="flex items-start gap-3 text-green-50"><i data-lucide="check-circle-2" class="h-5 w-5 mt-0.5 shrink-0 text-green-500"></i><span>Rekomendasi penanganan &amp; dosis</span></li>
+                            <li class="flex items-start gap-3 text-green-50"><i data-lucide="check-circle-2" class="h-5 w-5 mt-0.5 shrink-0 text-green-500"></i><span>Riwayat deteksi per blok lahan</span></li>
+                            <li class="flex items-start gap-3 text-green-50"><i data-lucide="check-circle-2" class="h-5 w-5 mt-0.5 shrink-0 text-green-500"></i><span>Peringatan sebaran ke blok tetangga</span></li>
+                        </ul>
+                        <div class="flex flex-col sm:flex-row gap-3">
+                            <a href="register.html" class="inline-flex items-center justify-center text-white px-6 py-3 rounded-xl font-semibold bg-green-600 hover:bg-green-700 transition-all hover:scale-105 shadow-lg">Coba Deteksi AI <i data-lucide="arrow-right" class="ml-2 h-5 w-5"></i></a>
+                            <a href="#benefits" class="inline-flex items-center justify-center px-6 py-3 rounded-xl font-semibold border-2 border-white/20 text-white hover:bg-white/10 transition-all">Cara Kerja</a>
+                        </div>
+                    </div>
+                    <div class="lg:order-1">
+                        <div class="relative mx-auto w-fit">
+                            <div class="absolute -inset-8 rounded-full blur-3xl opacity-25" style="background-color:#16a34a"></div>
+                            <div class="phone"><div class="phone-screen"><img src="https://images.unsplash.com/photo-1746932714599-869080190380?auto=format&fit=crop&w=800&q=80" alt="Deteksi Dini Penyakit"></div></div>
+                            <div class="chip-float -left-10 sm:-left-16 top-16">Hawar Daun 92%</div>
+                            <div class="chip-float -right-8 sm:-right-14 bottom-20">Panen +18%</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== Alur Kerja / Benefits tabs ===== -->
+    <section id="benefits" class="relative py-20 overflow-hidden border-y border-green-950" style="background-color:#1e402e">
+        <div class="grid-overlay"></div>
+        <div class="glow -bottom-32 -left-24 w-[28rem] h-[28rem] opacity-15" style="background-color:#16a34a"></div>
+        <div class="relative max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 reveal">
+            <h2 class="text-3xl md:text-4xl font-bold text-white mb-12 text-center">Alur Kerja: Dari Sensor hingga Panen</h2>
+            <div data-autotabs data-interval="6000" data-active-bg="#16a34a">
+                <div class="flex flex-wrap justify-center gap-2 sm:gap-3 mb-8">
+                    <button data-tab-btn class="min-h-[4rem] basis-[calc(50%-0.25rem)] sm:basis-44 lg:basis-48 shrink-0 px-3 py-3 text-xs sm:text-sm font-semibold rounded-xl border-2 border-white/10 bg-transparent text-green-100/60 flex items-center justify-center text-center leading-snug transition-all">1. Pasang Sensor</button>
+                    <button data-tab-btn class="min-h-[4rem] basis-[calc(50%-0.25rem)] sm:basis-44 lg:basis-48 shrink-0 px-3 py-3 text-xs sm:text-sm font-semibold rounded-xl border-2 border-white/10 bg-transparent text-green-100/60 flex items-center justify-center text-center leading-snug transition-all">2. Pantau Real-Time</button>
+                    <button data-tab-btn class="min-h-[4rem] basis-[calc(50%-0.25rem)] sm:basis-44 lg:basis-48 shrink-0 px-3 py-3 text-xs sm:text-sm font-semibold rounded-xl border-2 border-white/10 bg-transparent text-green-100/60 flex items-center justify-center text-center leading-snug transition-all">3. Otomatisasi Irigasi</button>
+                    <button data-tab-btn class="min-h-[4rem] basis-[calc(50%-0.25rem)] sm:basis-44 lg:basis-48 shrink-0 px-3 py-3 text-xs sm:text-sm font-semibold rounded-xl border-2 border-white/10 bg-transparent text-green-100/60 flex items-center justify-center text-center leading-snug transition-all">4. Kelola Tim &amp; Biaya</button>
+                    <button data-tab-btn class="min-h-[4rem] basis-[calc(50%-0.25rem)] sm:basis-44 lg:basis-48 shrink-0 px-3 py-3 text-xs sm:text-sm font-semibold rounded-xl border-2 border-white/10 bg-transparent text-green-100/60 flex items-center justify-center text-center leading-snug transition-all">5. Prediksi &amp; Panen Tepat</button>
+                </div>
+                <div class="text-center">
+                    <div class="p-8 rounded-2xl border bg-white/5 border-white/10">
+                        <div class="flex justify-center gap-2 mb-5">
+                            <button data-tab-dot aria-label="Langkah 1" class="h-2 rounded-full transition-all"></button>
+                            <button data-tab-dot aria-label="Langkah 2" class="h-2 rounded-full transition-all"></button>
+                            <button data-tab-dot aria-label="Langkah 3" class="h-2 rounded-full transition-all"></button>
+                            <button data-tab-dot aria-label="Langkah 4" class="h-2 rounded-full transition-all"></button>
+                            <button data-tab-dot aria-label="Langkah 5" class="h-2 rounded-full transition-all"></button>
+                        </div>
+                        <div data-tab-panel><h3 class="text-2xl font-semibold text-white mb-4">1. Pasang Sensor</h3><p class="text-lg text-green-100/70 max-w-2xl mx-auto">Tim kami bantu pilih dan pasang sensor suhu, kelembaban, pH, TDS, dan curah hujan. Terhubung ke dashboard dalam hitungan jam, lengkap dengan konsultasi teknis.</p></div>
+                        <div data-tab-panel class="hidden"><h3 class="text-2xl font-semibold text-white mb-4">2. Pantau Real-Time</h3><p class="text-lg text-green-100/70 max-w-2xl mx-auto">Semua blok lahan tampil di Farm Command Center: peta, grafik tren, dan status perangkat. Akses via web dan HP, kapan saja.</p></div>
+                        <div data-tab-panel class="hidden"><h3 class="text-2xl font-semibold text-white mb-4">3. Otomatisasi Irigasi</h3><p class="text-lg text-green-100/70 max-w-2xl mx-auto">Pompa menyala saat tanah kering, mati saat cukup. Hemat air dan listrik hingga 30%.</p></div>
+                        <div data-tab-panel class="hidden"><h3 class="text-2xl font-semibold text-white mb-4">4. Kelola Tim &amp; Biaya</h3><p class="text-lg text-green-100/70 max-w-2xl mx-auto">Tugas lapangan tercatat rapi, biaya per blok transparan.</p></div>
+                        <div data-tab-panel class="hidden"><h3 class="text-2xl font-semibold text-white mb-4">5. Prediksi &amp; Panen Tepat</h3><p class="text-lg text-green-100/70 max-w-2xl mx-auto">Data historis untuk forecasting hasil dan rekomendasi waktu panen.</p></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== Community ===== -->
+    <section id="community" class="relative py-20 overflow-hidden border-y border-green-950" style="background-color:#152e20">
+        <div class="grid-overlay"></div>
+        <div class="absolute inset-0 pointer-events-none">
+            <div class="absolute -top-24 left-1/4 w-96 h-96 rounded-full blur-3xl opacity-20" style="background-color:#16a34a"></div>
+            <div class="absolute -bottom-24 right-1/4 w-96 h-96 rounded-full blur-3xl opacity-10" style="background-color:#ca8a04"></div>
+        </div>
+        <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-14 reveal">
+                <span class="inline-block px-4 py-1.5 rounded-full text-xs font-semibold tracking-widest uppercase mb-4 border text-yellow-600" style="border-color:rgba(202,138,4,.31);background-color:rgba(202,138,4,.06)">Komunitas &amp; Edukasi</span>
+                <h2 class="text-3xl md:text-4xl font-bold text-white mb-4">Bertumbuh Bersama Komunitas</h2>
+                <p class="text-lg text-gray-300 max-w-3xl mx-auto">Teknologi saja tidak cukup &mdash; kami membangun ekosistem manusia di baliknya: petani, mentor, dan pengembang.</p>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 reveal">
+                <div class="glass-card rounded-2xl p-8">
+                    <div class="w-14 h-14 mb-6 rounded-xl flex items-center justify-center" style="background-color:rgba(22,163,74,.15)"><i data-lucide="users" class="h-7 w-7 text-green-500"></i></div>
+                    <h3 class="text-xl font-bold text-white mb-3">Komunitas Petani Digital</h3>
+                    <p class="text-gray-300 leading-relaxed mb-6">Belajar, berbagi, dan riset bersama petani digital, pelajar, dan pengembang smart farming dengan akses data nyata dari lapangan.</p>
+                    <a href="https://wa.me/6289517605857?text=Halo%20BhumiOS%20Agro,%20saya%20ingin%20gabung%20komunitas" target="_blank" rel="noopener" class="inline-flex items-center font-semibold text-sm gap-2 text-yellow-600">Gabung Komunitas <i data-lucide="arrow-right" class="h-4 w-4"></i></a>
+                </div>
+                <div class="glass-card rounded-2xl p-8">
+                    <div class="w-14 h-14 mb-6 rounded-xl flex items-center justify-center" style="background-color:rgba(22,163,74,.15)"><i data-lucide="graduation-cap" class="h-7 w-7 text-green-500"></i></div>
+                    <h3 class="text-xl font-bold text-white mb-3">Program Pelatihan</h3>
+                    <p class="text-gray-300 leading-relaxed mb-6">Online, offline, dan hybrid dengan mentor profesional dan kurikulum step-by-step untuk pemula hingga mahir, lengkap dengan sertifikat.</p>
+                    <a href="#contact" class="inline-flex items-center font-semibold text-sm gap-2 text-yellow-600">Lihat Pelatihan <i data-lucide="arrow-right" class="h-4 w-4"></i></a>
+                </div>
+                <div class="glass-card rounded-2xl p-8">
+                    <div class="w-14 h-14 mb-6 rounded-xl flex items-center justify-center" style="background-color:rgba(22,163,74,.15)"><i data-lucide="messages-square" class="h-7 w-7 text-green-500"></i></div>
+                    <h3 class="text-xl font-bold text-white mb-3">Konsultasi &amp; Pendampingan</h3>
+                    <p class="text-gray-300 leading-relaxed mb-6">Dari perencanaan hingga evaluasi: analisis kebutuhan, desain sistem, dan pendampingan implementasi berbasis data.</p>
+                    <a href="https://wa.me/6289517605857?text=Halo%20BhumiOS%20Agro,%20saya%20butuh%20konsultasi%20smart%20farming" target="_blank" rel="noopener" class="inline-flex items-center font-semibold text-sm gap-2 text-yellow-600">Minta Konsultasi <i data-lucide="arrow-right" class="h-4 w-4"></i></a>
+                </div>
+            </div>
+            <div class="mt-20 reveal">
+                <div class="flex items-center justify-center gap-3 mb-3">
+                    <i data-lucide="newspaper" class="h-5 w-5 text-yellow-600"></i>
+                    <h3 class="text-2xl md:text-3xl font-bold text-white">Kabar &amp; Galeri Lapangan</h3>
+                </div>
+                <p class="text-center text-green-100/70 mb-10 max-w-2xl mx-auto">Cerita panen, pelatihan, dan kegiatan komunitas terbaru.</p>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                    <a href="#contact" class="group glass-card rounded-2xl overflow-hidden block">
+                        <div class="relative h-48 overflow-hidden"><img src="https://images.unsplash.com/photo-1625246333195-78d9c38ad449?auto=format&fit=crop&w=800&q=80" alt="Panen raya" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"><div class="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div><span class="absolute top-4 left-4 px-3 py-1 rounded-full text-xs font-semibold bg-black/50 text-white backdrop-blur-sm border border-white/20">12 Agu 2026</span></div>
+                        <div class="p-6"><h4 class="text-lg font-bold text-white leading-snug mb-2">Panen Raya Blok A: Hasil Naik 18% Berkat Irigasi Otomatis</h4><span class="inline-flex items-center text-sm font-semibold gap-2 text-yellow-600">Baca Selengkapnya <i data-lucide="arrow-right" class="h-4 w-4"></i></span></div>
+                    </a>
+                    <a href="#contact" class="group glass-card rounded-2xl overflow-hidden block">
+                        <div class="relative h-48 overflow-hidden"><img src="https://images.unsplash.com/photo-1523741543316-beb7fc7023d8?auto=format&fit=crop&w=800&q=80" alt="Pelatihan" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"><div class="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div><span class="absolute top-4 left-4 px-3 py-1 rounded-full text-xs font-semibold bg-black/50 text-white backdrop-blur-sm border border-white/20">28 Jul 2026</span></div>
+                        <div class="p-6"><h4 class="text-lg font-bold text-white leading-snug mb-2">Pelatihan Smart Farming Angkatan 6 Diikuti 40 Petani Milenial</h4><span class="inline-flex items-center text-sm font-semibold gap-2 text-yellow-600">Baca Selengkapnya <i data-lucide="arrow-right" class="h-4 w-4"></i></span></div>
+                    </a>
+                    <a href="#contact" class="group glass-card rounded-2xl overflow-hidden block">
+                        <div class="relative h-48 overflow-hidden"><img src="https://images.unsplash.com/photo-1500382017468-9049fed747ef?auto=format&fit=crop&w=800&q=80" alt="Lahan baru" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"><div class="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div><span class="absolute top-4 left-4 px-3 py-1 rounded-full text-xs font-semibold bg-black/50 text-white backdrop-blur-sm border border-white/20">9 Jul 2026</span></div>
+                        <div class="p-6"><h4 class="text-lg font-bold text-white leading-snug mb-2">1.000 Ha Lahan Baru Terhubung ke Farm Command Center</h4><span class="inline-flex items-center text-sm font-semibold gap-2 text-yellow-600">Baca Selengkapnya <i data-lucide="arrow-right" class="h-4 w-4"></i></span></div>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== CTA ===== -->
+    <section id="cta" class="relative py-20 overflow-hidden" style="background:linear-gradient(135deg,#16a34a 0%,#15803d 50%,#ca8a04 100%)">
+        <div class="relative max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center z-10 reveal">
+            <h2 class="text-4xl md:text-5xl font-bold text-white mb-6">Siap Digitalisasi 100 Ha Pertama Anda?</h2>
+            <p class="text-xl text-white/90 mb-10">Bergabung dengan komunitas petani digital. Respon 1x24 jam &bull; Konsultasi gratis &bull; Tim teknis berpengalaman.</p>
+            <div class="flex flex-col sm:flex-row gap-6 justify-center">
+                <a href="https://wa.me/6289517605857?text=Halo%20BhumiOS%20Agro,%20saya%20tertarik%20dengan%20layanan%20smart%20farming" target="_blank" rel="noopener" class="inline-flex items-center justify-center text-white bg-white/20 hover:bg-white/30 backdrop-blur-sm px-8 py-3 rounded-lg font-semibold text-lg transition-all hover:scale-105">Coba Demo Gratis <i data-lucide="arrow-right" class="ml-2 h-5 w-5"></i></a>
+                <a href="#benefits" class="inline-flex items-center justify-center border-2 border-white text-white hover:bg-white hover:text-gray-900 px-8 py-3 rounded-lg font-semibold transition-all">Lihat Cara Kerja</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== Footer / Kontak ===== -->
+    <footer id="contact" class="bg-[#0b1f14] text-white py-16 border-t border-white/10" style="scroll-margin-top:5rem">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <div>
+                    <span class="text-2xl font-bold text-green-500">BhumiOS Agro</span>
+                    <p class="text-gray-400 mb-6 mt-4 leading-relaxed">Platform agroindustri cerdas: monitoring IoT, manajemen lahan, operasional lahan, dan keuangan tani dalam satu dashboard.</p>
+                    <div class="space-y-3 text-gray-300 text-sm">
+                        <div class="flex items-center gap-3"><i data-lucide="mail" class="h-4 w-4 text-green-500"></i><span>agro@bhumios.com</span></div>
+                        <div class="flex items-center gap-3"><i data-lucide="phone" class="h-4 w-4 text-green-500"></i><span>+62 895-1760-5857</span></div>
+                        <div class="flex items-start gap-3"><i data-lucide="map-pin" class="h-4 w-4 mt-0.5 text-green-500"></i><span>Rejang Lebong - Bengkulu 39119</span></div>
+                    </div>
+                </div>
+                <div>
+                    <h3 class="text-lg font-semibold mb-6 text-white">Solusi</h3>
+                    <ul class="space-y-3 text-gray-400">
+                        <li><a href="#features" class="hover:text-white transition-colors">Monitoring IoT</a></li>
+                        <li><a href="#modules" class="hover:text-white transition-colors">Manajemen Lahan</a></li>
+                        <li><a href="#apps" class="hover:text-white transition-colors">Aplikasi</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-lg font-semibold mb-6 text-white">Perusahaan</h3>
+                    <ul class="space-y-3 text-gray-400">
+                        <li><a href="#benefits" class="hover:text-white transition-colors">Cara Kerja</a></li>
+                        <li><a href="#contact" class="hover:text-white transition-colors">Kontak</a></li>
+                        <li><a href="#cta" class="hover:text-white transition-colors">Demo</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-lg font-semibold mb-4 text-white">Insight Agro &amp; IoT</h3>
+                    <p class="text-sm mb-4 text-gray-400">Dapatkan tips smart farming dan studi kasus panen setiap bulan.</p>
+                    <form data-demo-form class="flex">
+                        <input type="email" required placeholder="Alamat email" class="flex-1 px-4 py-3 rounded-l-lg text-sm bg-gray-800 border border-gray-600 text-white placeholder-gray-400 focus:outline-none">
+                        <button type="submit" class="bg-green-600 hover:bg-green-700 text-white px-5 py-3 rounded-r-lg font-semibold text-sm transition-colors">Kirim</button>
+                    </form>
+                </div>
+            </div>
+            <div class="border-t border-white/10 mt-8 pt-8 text-center text-gray-400 text-sm">
+                <p>&copy; <span data-year>2026</span> BhumiOS Agro. Versi demo statis &mdash; tanpa backend.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Floating WhatsApp -->
+    <a href="https://wa.me/6289517605857?text=Halo%20BhumiOS%20Agro" target="_blank" rel="noopener" aria-label="Chat WhatsApp"
+       class="fixed bottom-6 right-6 z-50 w-14 h-14 rounded-full bg-green-600 hover:bg-green-700 shadow-2xl flex items-center justify-center transition-all hover:scale-110">
+        <i data-lucide="message-circle" class="h-7 w-7 text-white"></i>
+    </a>
+
+    <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
+    <script src="assets/app.js"></script>
+</body>
+</html>

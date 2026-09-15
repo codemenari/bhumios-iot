@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Daftar - BhumiOS Agro</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="assets/style.css">
+</head>
+<body class="antialiased min-h-screen" style="background-color:#0b1f14">
+    <div class="min-h-screen grid grid-cols-1 lg:grid-cols-2">
+        <!-- Branding panel -->
+        <div class="relative hidden lg:flex flex-col justify-between p-12 overflow-hidden" style="background-color:#122a1e">
+            <div class="grid-overlay"></div>
+            <div class="glow -top-24 -left-24 w-96 h-96 opacity-20" style="background-color:#16a34a"></div>
+            <div class="relative">
+                <a href="index.html" class="text-2xl font-bold text-green-500">BhumiOS Agro</a>
+            </div>
+            <div class="relative">
+                <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full text-sm font-semibold mb-6 bg-white/10 border border-white/20 text-white">
+                    <span class="live-dot"></span>
+                    Gratis 14 hari, tanpa kartu kredit
+                </div>
+                <h1 class="text-4xl font-bold text-white mb-4 leading-tight">Digitalisasi 100 Ha<br>pertama Anda hari ini.</h1>
+                <p class="text-green-100/70 text-lg mb-8">Daftar dan tim kami akan menghubungi untuk penjadwalan pemasangan sensor &amp; onboarding dashboard.</p>
+                <ul class="space-y-3 max-w-md">
+                    <li class="flex items-start gap-3 text-green-50"><i data-lucide="check-circle-2" class="h-5 w-5 mt-0.5 shrink-0 text-green-500"></i><span>Konsultasi &amp; survei lahan gratis</span></li>
+                    <li class="flex items-start gap-3 text-green-50"><i data-lucide="check-circle-2" class="h-5 w-5 mt-0.5 shrink-0 text-green-500"></i><span>Panduan pemasangan sensor step-by-step</span></li>
+                    <li class="flex items-start gap-3 text-green-50"><i data-lucide="check-circle-2" class="h-5 w-5 mt-0.5 shrink-0 text-green-500"></i><span>Akses penuh dashboard + aplikasi mobile</span></li>
+                </ul>
+            </div>
+            <p class="relative text-sm text-green-100/50">&copy; <span data-year>2026</span> BhumiOS Agro &mdash; versi demo statis.</p>
+        </div>
+        <!-- Form panel -->
+        <div class="flex items-center justify-center p-6 sm:p-12 bg-[#0b1f14]">
+            <div class="w-full max-w-md">
+                <a href="index.html" class="lg:hidden text-2xl font-bold text-green-500">BhumiOS Agro</a>
+                <h2 class="text-3xl font-bold text-white mt-4 lg:mt-0">Buat akun gratis</h2>
+                <p class="text-green-100/70 mt-2 mb-8">Isi data usaha/perusahaan Anda di bawah ini.</p>
+                <form data-demo-form class="space-y-5">
+                    <div>
+                        <label for="name" class="block text-sm font-medium text-gray-200 mb-2">Nama Lengkap</label>
+                        <input id="name" type="text" required placeholder="Nama Anda" class="w-full px-4 py-3 rounded-xl text-sm bg-white/5 border border-white/15 text-white placeholder-gray-500 focus:outline-none focus:border-green-500 transition-colors">
+                    </div>
+                    <div>
+                        <label for="company" class="block text-sm font-medium text-gray-200 mb-2">Nama    Usaha / Perusahaan</label>
+                        <input id="company" type="text" placeholder="cth. Tani Makmur Sejahtera" class="w-full px-4 py-3 rounded-xl text-sm bg-white/5 border border-white/15 text-white placeholder-gray-500 focus:outline-none focus:border-green-500 transition-colors">
+                    </div>
+                    <div>
+                        <label for="email" class="block text-sm font-medium text-gray-200 mb-2">Alamat Email</label>
+                        <input id="email" type="email" required placeholder="nama@usaha.com" class="w-full px-4 py-3 rounded-xl text-sm bg-white/5 border border-white/15 text-white placeholder-gray-500 focus:outline-none focus:border-green-500 transition-colors">
+                    </div>
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
+                        <div>
+                            <label for="password" class="block text-sm font-medium text-gray-200 mb-2">Kata Sandi</label>
+                            <input id="password" type="password" required placeholder="Min. 8 karakter" class="w-full px-4 py-3 rounded-xl text-sm bg-white/5 border border-white/15 text-white placeholder-gray-500 focus:outline-none focus:border-green-500 transition-colors">
+                        </div>
+                        <div>
+                            <label for="password-confirm" class="block text-sm font-medium text-gray-200 mb-2">Konfirmasi</label>
+                            <input id="password-confirm" type="password" required placeholder="Ulangi sandi" class="w-full px-4 py-3 rounded-xl text-sm bg-white/5 border border-white/15 text-white placeholder-gray-500 focus:outline-none focus:border-green-500 transition-colors">
+                        </div>
+                    </div>
+                    <button type="submit" class="w-full bg-green-600 hover:bg-green-700 text-white font-semibold py-3 rounded-xl transition-all hover:scale-[1.01] shadow-lg">BUAT AKUN GRATIS</button>
+                </form>
+                <p class="text-center text-sm text-gray-400 mt-6">Sudah punya akun? <a href="login.html" class="text-green-500 font-semibold hover:underline">Masuk</a></p>
+                <p class="text-center text-sm mt-4"><a href="index.html" class="text-gray-500 hover:text-gray-300">&larr; Kembali ke beranda</a></p>
+            </div>
+        </div>
+    </div>
+    <div id="demo-toast" class="opacity-0 translate-y-4 pointer-events-none fixed bottom-6 left-1/2 -translate-x-1/2 z-50 px-6 py-3 rounded-xl bg-yellow-600 text-white text-sm font-semibold shadow-2xl">
+        Mode demo: pendaftaran dinonaktifkan (tanpa backend).
+    </div>
+    <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
+    <script src="assets/app.js"></script>
+</body>
+</html>

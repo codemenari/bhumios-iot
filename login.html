@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Masuk - BhumiOS Agro</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="assets/style.css">
+</head>
+<body class="antialiased min-h-screen" style="background-color:#0b1f14">
+    <div class="min-h-screen grid grid-cols-1 lg:grid-cols-2">
+        <!-- Branding panel -->
+        <div class="relative hidden lg:flex flex-col justify-between p-12 overflow-hidden" style="background-color:#122a1e">
+            <div class="grid-overlay"></div>
+            <div class="glow -top-24 -left-24 w-96 h-96 opacity-20" style="background-color:#16a34a"></div>
+            <div class="relative">
+                <a href="index.html" class="text-2xl font-bold text-green-500">BhumiOS Agro</a>
+            </div>
+            <div class="relative">
+                <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full text-sm font-semibold mb-6 bg-white/10 border border-white/20 text-white">
+                    <span class="live-dot"></span>
+                    1.240+ Sensor Online
+                </div>
+                <h1 class="text-4xl font-bold text-white mb-4 leading-tight">Seluruh lahan                Anda,<br>dalam satu dashboard.</h1>
+                <p class="text-green-100/70 text-lg mb-8">Masuk untuk memantau sensor, mengelola blok lahan, dan melihat laporan panen real-time.</p>
+                <div class="grid grid-cols-3 gap-4 max-w-md">
+                    <div class="rounded-xl bg-white/5 border border-white/10 p-4 text-center"><div class="text-xl font-bold text-white">12.500+</div><div class="text-xs text-green-100/70">Ha Terpantau</div></div>
+                    <div class="rounded-xl bg-white/5 border border-white/10 p-4 text-center"><div class="text-xl font-bold text-white">1.240+</div><div class="text-xs text-green-100/70">Sensor Aktif</div></div>
+                    <div class="rounded-xl bg-white/5 border border-white/10 p-4 text-center"><div class="text-xl font-bold text-white">94%</div><div class="text-xs text-green-100/70">Akurasi Panen</div></div>
+                </div>
+            </div>
+            <p class="relative text-sm text-green-100/50">&copy; <span data-year>2026</span> BhumiOS Agro &mdash; versi demo statis.</p>
+        </div>
+        <!-- Form panel -->
+        <div class="flex items-center justify-center p-6 sm:p-12 bg-[#0b1f14]">
+            <div class="w-full max-w-md">
+                <a href="index.html" class="lg:hidden text-2xl font-bold text-green-500">BhumiOS Agro</a>
+                <h2 class="text-3xl font-bold text-white mt-4 lg:mt-0">Masuk ke akun Anda</h2>
+                <p class="text-green-100/70 mt-2 mb-8">Masukkan email dan kata sandi untuk masuk.</p>
+                <form data-demo-form class="space-y-5">
+                    <div>
+                        <label for="email" class="block text-sm font-medium text-gray-200 mb-2">Alamat Email</label>
+                        <input id="email" type="email" required placeholder="nama@usaha.com" class="w-full px-4 py-3 rounded-xl text-sm bg-white/5 border border-white/15 text-white placeholder-gray-500 focus:outline-none focus:border-green-500 transition-colors">
+                    </div>
+                    <div>
+                        <div class="flex items-center justify-between mb-2">
+                            <label for="password" class="text-sm font-medium text-gray-200">Kata Sandi</label>
+                            <span class="text-sm text-green-500 cursor-pointer hover:underline">Lupa kata sandi?</span>
+                        </div>
+                        <input id="password" type="password" required placeholder="&bull;&bull;&bull;&bull;&bull;&bull;&bull;&bull;" class="w-full px-4 py-3 rounded-xl text-sm bg-white/5 border border-white/15 text-white placeholder-gray-500 focus:outline-none focus:border-green-500 transition-colors">
+                    </div>
+                    <label class="flex items-center gap-3 text-sm text-gray-300 cursor-pointer">
+                        <input type="checkbox" checked class="w-4 h-4 accent-green-600"> Ingat saya
+                    </label>
+                    <button type="submit" class="w-full bg-green-600 hover:bg-green-700 text-white font-semibold py-3 rounded-xl transition-all hover:scale-[1.01] shadow-lg">MASUK</button>
+                </form>
+                <p class="text-center text-sm text-gray-400 mt-6">Belum punya akun? <a href="register.html" class="text-green-500 font-semibold hover:underline">Daftar gratis</a></p>
+                <p class="text-center text-sm mt-4"><a href="index.html" class="text-gray-500 hover:text-gray-300">&larr; Kembali ke beranda</a></p>
+            </div>
+        </div>
+    </div>
+    <div id="demo-toast" class="opacity-0 translate-y-4 pointer-events-none fixed bottom-6 left-1/2 -translate-x-1/2 z-50 px-6 py-3 rounded-xl bg-yellow-600 text-white text-sm font-semibold shadow-2xl">
+        Mode demo: login dinonaktifkan (tanpa backend).
+    </div>
+    <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
+    <script src="assets/app.js"></script>
+</body>
+</html>

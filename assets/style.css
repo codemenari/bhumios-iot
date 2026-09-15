@@ -1,0 +1,192 @@
+/* BhumiOS Agro — static demo theme (dark agro-tech) */
+:root {
+    --primary: #16a34a;
+    --secondary: #15803d;
+    --accent: #ca8a04;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    background: #0b1f14;
+}
+
+/* Blueprint grid overlay (ala situs referensi) */
+.grid-overlay {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    background-image:
+        linear-gradient(rgba(255, 255, 255, 0.055) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255, 255, 255, 0.055) 1px, transparent 1px);
+    background-size: 48px 48px;
+    -webkit-mask-image: radial-gradient(ellipse 90% 70% at 50% 40%, black 25%, transparent 78%);
+    mask-image: radial-gradient(ellipse 90% 70% at 50% 40%, black 25%, transparent 78%);
+}
+
+.glow {
+    position: absolute;
+    border-radius: 9999px;
+    filter: blur(72px);
+    pointer-events: none;
+}
+
+/* Scroll reveal */
+.reveal {
+    opacity: 0;
+    transform: translateY(32px);
+    transition: opacity 0.7s ease-out, transform 0.7s ease-out;
+    will-change: opacity, transform;
+}
+
+.reveal.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .reveal {
+        opacity: 1;
+        transform: none;
+        transition: none;
+    }
+
+    html {
+        scroll-behavior: auto;
+    }
+}
+
+/* Phone mockup */
+.phone {
+    position: relative;
+    width: 15rem;
+    border-radius: 2.75rem;
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    background: rgba(0, 0, 0, 0.6);
+    padding: 0.625rem;
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.6);
+}
+
+@media (min-width: 640px) {
+    .phone {
+        width: 18rem;
+    }
+}
+
+.phone::before {
+    content: "";
+    position: absolute;
+    top: 1.25rem;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 6rem;
+    height: 1.25rem;
+    background: #000;
+    border-radius: 9999px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    z-index: 10;
+}
+
+.phone-screen {
+    border-radius: 2.1rem;
+    overflow: hidden;
+}
+
+.phone-screen img {
+    width: 100%;
+    height: 26rem;
+    object-fit: cover;
+    display: block;
+}
+
+@media (min-width: 640px) {
+    .phone-screen img {
+        height: 30rem;
+    }
+}
+
+.chip-float {
+    position: absolute;
+    padding: 0.5rem 0.75rem;
+    border-radius: 0.75rem;
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(8px);
+    color: #fff;
+    font-size: 0.75rem;
+    font-weight: 600;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
+    white-space: nowrap;
+    z-index: 10;
+}
+
+/* Live dot */
+.live-dot {
+    position: relative;
+    display: inline-flex;
+    width: 0.625rem;
+    height: 0.625rem;
+}
+
+.live-dot::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: 9999px;
+    background: #4ade80;
+    opacity: 0.75;
+    animation: ping-soft 1.6s cubic-bezier(0, 0, 0.2, 1) infinite;
+}
+
+.live-dot::after {
+    content: "";
+    position: relative;
+    width: 0.625rem;
+    height: 0.625rem;
+    border-radius: 9999px;
+    background: #22c55e;
+}
+
+@keyframes ping-soft {
+    75%, 100% {
+        transform: scale(2.4);
+        opacity: 0;
+    }
+}
+
+/* Telemetry strip */
+.telemetry {
+    font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+    display: inline-block;
+}
+
+/* Cards */
+.glass-card {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(4px);
+    transition: background 0.3s, transform 0.3s, border-color 0.3s;
+}
+
+.glass-card:hover {
+    background: rgba(255, 255, 255, 0.1);
+    transform: translateY(-4px);
+}
+
+/* Hide scrollbar for carousels */
+.no-scrollbar::-webkit-scrollbar {
+    display: none;
+}
+
+.no-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+
+/* Demo toast */
+#demo-toast {
+    transition: opacity 0.3s, transform 0.3s;
+}
